@@ -1,0 +1,40 @@
+FloppyUX Release 0.60
+
+WHAT IS FLOPPYUX?
+
+  FloppyUX is a USR/UX-based UNIX clone for late-486 early-586 machines written from scratch by USER9646. It is a older version of USR/UX (04.11.26 beta, which was not released to the public) that can fit in a 1.44 MB floppy.
+
+WHAT IS USR/UX 2?
+
+  USR/UX 2 (UserUNIX) is a monolithic UNIX clone made by USER9646. It tries to be more UNIX-like and POSIX compatible (it also has ring 3), but it wont be as professional as other OsDev projects like Zinnia, Ethereal or Astral. It only works with ext2 and has a (small) init system (obviously, because this is unix(like)).
+
+Init: /sbin/init. This SysV-style Init is very minimal, so minimal that it is barely functional if we port it to the real linux world (better than systemd doe geg)
+
+Its shell:
+sh - FloppyUX shell (/bin/sh) based off what was formerly called UserShell (now FUSH, Fast and Usable shell in the main USR/UX operating system)
+
+Its C library:
+Who the hell needs a libc? We have the kernel headers at usr/.
+
+It also has a VI-like editor which is just valled "vi", because i dont want to add the u- suffix to every thing
+
+How to compile and run it:
+
+You will need:
+e2fsprogs, xorriso, grub-mkrescue, gcc, nasm, qemu and ld.
+
+Now do:
+make - Makes the kernel binary (usr-ux-2.bin)
+make disk - Makes the ext2 rootfs disk
+make bootsys - Runs
+
+Specs needed for USR/UX 2 to work:
+Storage:         Floppy (USB/integrated)
+Memory:          2-4 MB of RAM minimum.
+Processor:       i486SX (FPU recommended but not needed) minimum.
+Video card:      Any VGA and EGA card can work with that mistake of a UNIX
+Minimum storage: 1.44 MB.
+Computer:        mid-late 90s recommended, early-mid 2000s not recommended but stil usable
+Boot type:       MBR BIOS ONLY!!!
+
+This project is licensed under the GNU General Public License V2 because GPL won.

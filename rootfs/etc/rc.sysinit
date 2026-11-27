@@ -1,0 +1,14 @@
+# runs once at boot, before the first runlevel
+echo "[rc.sysinit] kernel mounted / and /run already"
+sleep 0.2
+echo "[rc.sysinit] Mounting /tmp"
+mount -t ramfs ramfs /tmp
+sleep 0.2
+echo "[rc.sysinit] Mounting /dev"
+mount -t devfs devfs /dev
+sleep 0.2
+echo "[rc.sysinit] Mounting /proc"
+mount -t proc proc /proc
+echo "[rc.sysinit]" Starting diskd daemon...
+diskd &
+
