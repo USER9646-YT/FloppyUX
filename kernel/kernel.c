@@ -94,12 +94,12 @@ void kernel_main(uint32_t magic, struct multiboot_info *mbi) {
     }
     vfs_mount_type("/", root, "ext2");
     // vfs_mount_type("/tmp", ramfs_create_root(), "ramfs");   // scratch space in RAM
-    // vfs_mount_type("/dev", devfs_create(), "devfs");        // device nodes
+    vfs_mount_type("/dev", devfs_create(), "devfs");        // device nodes
     // vfs_mount_type("/proc", procfs_create(), "proc");       // process and system info
 
-    struct vfs_node *run = ramfs_create_root();  // init <-> telinit, runlevel: root only
-    if (run) run->mode = 040755;
-    vfs_mount_type("/run", run, "ramfs");
+    // struct vfs_node *run = ramfs_create_root();  // init <-> telinit, runlevel: root only
+    // if (run) run->mode = 040755;
+    // vfs_mount_type("/run", run, "ramfs");
 
     kprintf("starting init...\n");
     if (proc_spawn_init("/sbin/init") != 0) {

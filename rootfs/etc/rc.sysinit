@@ -1,11 +1,11 @@
 # runs once at boot, before the first runlevel
-echo "[rc.sysinit] kernel mounted / and /run already"
+echo "[rc.sysinit] kernel mounted / and /dev already"
 sleep 0.2
 echo "[rc.sysinit] Mounting /tmp"
 mount -t ramfs ramfs /tmp
 sleep 0.2
-echo "[rc.sysinit] Mounting /dev"
-mount -t devfs devfs /dev
+echo "[rc.sysinit] Mounting /run"
+mount -t ramfs run /run
 sleep 0.2
 echo "[rc.sysinit] Mounting /proc"
 mount -t proc proc /proc
