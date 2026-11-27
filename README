@@ -7,7 +7,9 @@ WHAT IS FLOPPYUX?
 
 WHAT IS USR/UX 2?
 
-  USR/UX 2 (UserUNIX) is a monolithic UNIX clone made by USER9646. It tries to be more UNIX-like and POSIX compatible (it also has ring 3), but it wont be as professional as other OsDev projects like Zinnia, Ethereal or Astral. It only works with ext2 and has a (small) init system (obviously, because this is unix(like)).
+  USR/UX 2 (UserUNIX) is a monolithic UNIX clone made by USER9646. It tries to be more UNIX-like and POSIX
+  compatible (it also has ring 3), but it wont be as professional as other OsDev projects like Zinnia, Ethereal or
+  Astral. It only works with ext2 and has a (small) init system (obviously, because this is unix(like)).
 
 Init: /sbin/init. This SysV-style Init is very minimal, so minimal that it is barely functional if we port it to the real linux world (better than systemd doe geg)
 
